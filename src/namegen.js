@@ -1,5 +1,5 @@
 const animals = require('./models/animals.json').animals
-const chemicals = require('./models/chemicals.json').chemicals
+// const chemicals = require('./models/chemicals.json').chemicals
 const colors = require('./models/colors.json').colors
 const sep = '-'
 
