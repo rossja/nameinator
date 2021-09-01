@@ -1,11 +1,23 @@
-const animals = require('./models/animals.json').animals
-const chemicals = require('./models/chemicals.json').chemicals
-const colors = require('./models/colors.json').colors
-const sep = '-'
+const PORT = process.env.PORT || 9001
+const NODE_ENV = process.env.NODE_ENV || 'development'
 
-const color = colors[Math.floor(Math.random() * colors.length)]
-const animal = animals[Math.floor(Math.random() * animals.length)]
-const chemical = chemicals[Math.floor(Math.random() * chemicals.length)]
-const number = Math.floor(1000 + Math.random() * 9000)
+const express = require('express')
+const morgan = require('morgan')
+const helmet = require('helmet')
+const cors = require('cors')
+const methodOverride = require('method-override')
+const routes = require('./routes/v1')
 
-console.log(`${color}${sep}${chemical}${sep}${animal}${sep}${number}`)
+const app = express()
+
+app.use(express.json())
+app.use(morgan('dev'))
+app.use(helmet())
+app.use(cors())
+app.use(methodOverride())
+
+app.use('/v1', routes)
+
+app.listen(PORT, () => {
+  console.info(`server started on port ${PORT} (${NODE_ENV})`)
+})

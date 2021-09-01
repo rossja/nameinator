@@ -1,0 +1,32 @@
+{
+  "name": "nameinator",
+  "version": "0.1.0",
+  "description": "project name generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no test configured\"",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossja/nameinator.git"
+  },
+  "keywords": [
+    "nameinator"
+  ],
+  "author": "rossja <algorythm@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/rossja/nameinator/issues"
+  },
+  "homepage": "https://github.com/rossja/nameinator#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validation": "^3.0.8",
+    "helmet": "^4.6.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0"
+  }
+}
