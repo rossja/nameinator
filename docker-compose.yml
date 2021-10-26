@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  nameinator:
+    tty: true
+    image: $NAMEINATOR_APP_NAME
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment:
+      - BITNAMI_APP_NAME=$NAMEINATOR_APP_NAME
+      - NODE_ENV=$NAMEINATOR_NODE_ENV
+      - NODE_PORT=$NAMEINATOR_NODE_PORT
+    ports:
+      - $NAMEINATOR_NODE_PORT:$NAMEINATOR_NODE_PORT
